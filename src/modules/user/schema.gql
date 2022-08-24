@@ -1,0 +1,30 @@
+type User {
+  _id: String!
+  firstname: String!
+  lastname: String!
+  email: String!
+}
+
+input CreateUserInput {
+  firstname: String!
+  lastname: String!
+  email: String!
+}
+
+input UpdateUserInput {
+  _id: String!
+  firstname: String
+  lastname: String
+  email: String
+}
+
+type Query {
+  findAllUsers: [User!]!
+  findUser(_id: String!): User!
+}
+
+type Mutation {
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(_id: String!): void
+}

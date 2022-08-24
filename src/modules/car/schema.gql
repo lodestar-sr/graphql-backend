@@ -1,0 +1,30 @@
+type Car {
+  _id: String!
+  brand: String!
+  color: String!
+  price: Float!
+}
+
+input CreateCarInput {
+  brand: String!
+  color: String!
+  price: Float!
+}
+
+input UpdateCarInput {
+  _id: String!
+  brand: String
+  color: String
+  price: Float
+}
+
+type Query {
+  findAllCars: [Car!]!
+  findCar(_id: String!): Car!
+}
+
+type Mutation {
+  createCar(createCarInput: CreateCarInput!): Car!
+  updateCar(updateCarInput: UpdateCarInput!): Car!
+  removeCar(_id: String!): void
+}

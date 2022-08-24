@@ -1,0 +1,33 @@
+type SearchBookingResult {
+  cars: [Car!]
+  offices: [Office!]
+}
+
+type BookResult {
+  booked: Boolean!
+}
+
+input SearchBookingsInput {
+  user: String!
+  offset: Number
+  limit: Number
+}
+
+input BookCarInput {
+  _id: String!
+  user: String!
+}
+
+input BookOfficeInput {
+  _id: String!
+  user: String!
+}
+
+type Query {
+  findBookings(filter: SearchBookingsInput!): SearchBookingResult!
+}
+
+type Mutation {
+  toggleBookCar(bookCarInput: BookCarInput!): BookResult!
+  toggleBookOffice(bookOfficeInput: BookOfficeInput!): BookResult!
+}

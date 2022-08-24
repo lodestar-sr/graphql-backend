@@ -1,0 +1,27 @@
+type Office {
+  _id: String!
+  title: String!
+  address: String!
+}
+
+input CreateOfficeInput {
+  title: String!
+  address: String!
+}
+
+input UpdateOfficeInput {
+  _id: String!
+  title: String
+  address: String
+}
+
+type Query {
+  findAllOffices: [Office!]!
+  findOffice(_id: String!): Office!
+}
+
+type Mutation {
+  createOffice(createOfficeInput: CreateOfficeInput!): Office!
+  updateOffice(updateOfficeInput: UpdateOfficeInput!): Office!
+  removeOffice(_id: String!): void
+}
