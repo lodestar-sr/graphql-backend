@@ -9,8 +9,8 @@ type BookResult {
 
 input SearchBookingsInput {
   user: String!
-  offset: Number
-  limit: Number
+  offset: Int
+  limit: Int
 }
 
 input BookCarInput {
