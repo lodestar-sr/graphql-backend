@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from './entities/user.entity';
@@ -19,7 +19,7 @@ export class UserService {
   async findOne(id: string) {
     const user = await this.userModel.findOne({ _id: id }).exec();
     if (!user) {
-      throw new BadRequestException("User nod found");
+      throw new BadRequestException('User nod found');
     }
     return user;
   }

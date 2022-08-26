@@ -1,11 +1,10 @@
-import { ObjectType, Field, Float } from "@nestjs/graphql";
+import { ObjectType, Field, Float } from '@nestjs/graphql';
 import { Schema as MongooseSchema } from 'mongoose';
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 @Schema()
 @ObjectType()
 export class Car {
-
   @Field(() => String)
   _id: MongooseSchema.Types.ObjectId;
 

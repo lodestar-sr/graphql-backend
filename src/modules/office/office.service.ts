@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Office } from './entities/office.entity';
@@ -19,7 +19,7 @@ export class OfficeService {
   async findOne(id: string) {
     const office = await this.officeModel.findOne({ _id: id }).exec();
     if (!office) {
-      throw new BadRequestException("Office nod found");
+      throw new BadRequestException('Office nod found');
     }
     return office;
   }

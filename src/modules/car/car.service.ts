@@ -1,4 +1,4 @@
-import { BadRequestException, Injectable } from "@nestjs/common";
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Car } from './entities/car.entity';
@@ -19,7 +19,7 @@ export class CarService {
   async findOne(id: string) {
     const car = await this.carModel.findOne({ _id: id }).exec();
     if (!car) {
-      throw new BadRequestException("Car nod found");
+      throw new BadRequestException('Car nod found');
     }
     return car;
   }

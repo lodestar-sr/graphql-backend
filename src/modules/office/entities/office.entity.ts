@@ -5,7 +5,6 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 @Schema()
 @ObjectType()
 export class Office {
-
   @Field(() => String)
   _id: MongooseSchema.Types.ObjectId;
 

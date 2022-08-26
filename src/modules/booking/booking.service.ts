@@ -1,13 +1,13 @@
-import { Injectable } from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Car } from "../car/entities/car.entity";
-import { Office } from "../office/entities/office.entity";
+import { Car } from '../car/entities/car.entity';
+import { Office } from '../office/entities/office.entity';
 import { Booking } from './entities/booking.entity';
 import { BookCarInput } from './dto/book-car.input';
 import { BookOfficeInput } from './dto/book-office.input';
-import { SearchBookingsInput } from "./dto/search-bookings.input";
-import { SearchBookingsOutput } from "./dto/search-bookings.output";
+import { SearchBookingsInput } from './dto/search-bookings.input';
+import { SearchBookingsOutput } from './dto/search-bookings.output';
 
 @Injectable()
 export class BookingService {
@@ -41,24 +41,40 @@ export class BookingService {
   }
 
   async toggleBookCar(data: BookCarInput) {
-    const booking = await this.bookingModel.findOne({ user: data.user, item: data._id, model: Car.name });
+    const booking = await this.bookingModel.findOne({
+      user: data.user,
+      item: data._id,
+      model: Car.name,
+    });
     if (booking) {
       await booking.remove();
       return { booked: false };
     }
 
-    await this.bookingModel.create({ user: data.user, item: data._id, model: Car.name });
+    await this.bookingModel.create({
+      user: data.user,
+      item: data._id,
+      model: Car.name,
+    });
     return { booked: true };
   }
 
   async toggleBookOffice(data: BookOfficeInput) {
-    const booking = await this.bookingModel.findOne({ user: data.user, item: data._id, model: Office.name });
+    const booking = await this.bookingModel.findOne({
+      user: data.user,
+      item: data._id,
+      model: Office.name,
+    });
     if (booking) {
       await booking.remove();
       return { booked: false };
     }
 
-    await this.bookingModel.create({ user: data.user, item: data._id, model: Office.name });
+    await this.bookingModel.create({
+      user: data.user,
+      item: data._id,
+      model: Office.name,
+    });
     return { booked: true };
   }
 }

@@ -4,10 +4,10 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserModule } from "./modules/user/user.module";
-import { CarModule } from "./modules/car/car.module";
-import { OfficeModule } from "./modules/office/office.module";
-import { BookingModule } from "./modules/booking/booking.module";
+import { UserModule } from './modules/user/user.module';
+import { CarModule } from './modules/car/car.module';
+import { OfficeModule } from './modules/office/office.module';
+import { BookingModule } from './modules/booking/booking.module';
 
 @Module({
   imports: [

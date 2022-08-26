@@ -3,9 +3,9 @@ import { BookingService } from './booking.service';
 import { Booking } from './entities/booking.entity';
 import { BookCarInput } from './dto/book-car.input';
 import { BookOfficeInput } from './dto/book-office.input';
-import { SearchBookingsInput } from "./dto/search-bookings.input";
-import { SearchBookingsOutput } from "./dto/search-bookings.output";
-import { BookResultOutput } from "./dto/book-result.output";
+import { SearchBookingsInput } from './dto/search-bookings.input';
+import { SearchBookingsOutput } from './dto/search-bookings.output';
+import { BookResultOutput } from './dto/book-result.output';
 
 @Resolver(() => Booking)
 export class BookingResolver {

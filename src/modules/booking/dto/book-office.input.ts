@@ -6,5 +6,5 @@ export class BookOfficeInput {
   _id: string;
 
   @Field(() => String)
-  user: string;     // TODO: we will get user id from the auth token later
+  user: string; // TODO: we will get user id from the auth token later
 }

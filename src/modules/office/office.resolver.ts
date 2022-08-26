@@ -19,12 +19,16 @@ export class OfficeResolver {
   }
 
   @Mutation(() => Office)
-  createOffice(@Args('createOfficeInput') createOfficeInput: CreateOfficeInput) {
+  createOffice(
+    @Args('createOfficeInput') createOfficeInput: CreateOfficeInput,
+  ) {
     return this.officeService.create(createOfficeInput);
   }
 
   @Mutation(() => Office)
-  updateOffice(@Args('updateOfficeInput') updateOfficeInput: UpdateOfficeInput) {
+  updateOffice(
+    @Args('updateOfficeInput') updateOfficeInput: UpdateOfficeInput,
+  ) {
     return this.officeService.update(updateOfficeInput._id, updateOfficeInput);
   }
 
